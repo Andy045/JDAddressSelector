@@ -114,6 +114,7 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
     private TextView textViewCity;
     private TextView textViewCounty;
     private TextView textViewStreet;
+    private TextView textViewAlreadyChoosed;
 
     private ProgressBar progressBar;
 
@@ -165,6 +166,8 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
         this.textViewCity = (TextView) view.findViewById(R.id.textViewCity);
         this.textViewCounty = (TextView) view.findViewById(R.id.textViewCounty);
         this.textViewStreet = (TextView) view.findViewById(R.id.textViewStreet);
+
+        this.textViewAlreadyChoosed = (TextView) view.findViewById(R.id.already_choosed_txt);
 
         this.textViewProvince.setOnClickListener(new OnProvinceTabClickListener());
         this.textViewCity.setOnClickListener(new OnCityTabClickListener());
@@ -304,6 +307,9 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
             case INDEX_TAB_PROVINCE:
                 Province province = provinceAdapter.getItem(position);
 
+                // 显示已选择的文本
+                textViewAlreadyChoosed.setVisibility(View.VISIBLE);
+
                 // 更新当前级别及子级标签文本
                 textViewProvince.setText(province.name);
                 textViewCity.setText("请选择");
@@ -382,6 +388,9 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
 
                 callbackInternal();
 
+                break;
+
+            default:
                 break;
         }
 
