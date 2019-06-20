@@ -2,7 +2,7 @@
 
 一个 Android 版京东手机客户端（当前版本V5.0.1 build 28529）风格的级联地址选择器。
 
-![image](https://github.com/chihane/JDAddressSelector/raw/master/screenshots/screenshot1.jpg)
+![image](https://github.com/djzhao627/JDAddressSelector/raw/master/screenshots/screenshot1.jpg)
 
 ## 添加依赖
 
@@ -19,7 +19,7 @@
 
     dependencies {
         ...
-        compile 'com.github.chihane:JDAddressSelector:1.1.4'
+        compile 'com.github.djzhao627:JDAddressSelector:1.1.6.1'
     }
     
 ## 使用方法
