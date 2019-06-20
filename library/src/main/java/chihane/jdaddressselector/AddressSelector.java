@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -117,6 +118,8 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
     private TextView textViewAlreadyChoosed;
 
     private ProgressBar progressBar;
+    private LinearLayout linearLayoutAlreadyChoosed;
+    private View viewAlreadyChoosedIndicator;
 
     private ListView listView;
     private ProvinceAdapter provinceAdapter;
@@ -168,6 +171,8 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
         this.textViewStreet = (TextView) view.findViewById(R.id.textViewStreet);
 
         this.textViewAlreadyChoosed = (TextView) view.findViewById(R.id.already_choosed_txt);
+        this.linearLayoutAlreadyChoosed = (LinearLayout) view.findViewById(R.id.layout_tab);
+        this.viewAlreadyChoosedIndicator = view.findViewById(R.id.already_choosed_indicator);
 
         this.textViewProvince.setOnClickListener(new OnProvinceTabClickListener());
         this.textViewCity.setOnClickListener(new OnCityTabClickListener());
@@ -199,6 +204,8 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
                         break;
                     case INDEX_TAB_STREET:
                         buildIndicatorAnimatorTowards(textViewStreet).start();
+                        break;
+                    default:
                         break;
                 }
             }
@@ -309,6 +316,10 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
 
                 // 显示已选择的文本
                 textViewAlreadyChoosed.setVisibility(View.VISIBLE);
+                // 显示顶部已选择
+                linearLayoutAlreadyChoosed.setVisibility(View.VISIBLE);
+                // 显示分割线
+                viewAlreadyChoosedIndicator.setVisibility(View.VISIBLE);
 
                 // 更新当前级别及子级标签文本
                 textViewProvince.setText(province.name);
