@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:visibility="gone"
-        android:text="已选择" />
+        android:text="已选择"
+        android:visibility="gone" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,7 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="0dp">
+            android:paddingBottom="0dp"
+            android:visibility="gone">
 
             <View
                 android:layout_width="0dp"
@@ -75,10 +76,12 @@
     </RelativeLayout>
 
     <View
+        android:id="@+id/already_choosed_indicator"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="15dp"
-        android:background="#e8e8e8" />
+        android:background="#ECECEC"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
