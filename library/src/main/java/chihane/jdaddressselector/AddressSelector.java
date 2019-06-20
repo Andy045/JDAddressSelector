@@ -87,7 +87,8 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
                     } else {
                         callbackInternal();
                     }
-
+                    break;
+                default:
                     break;
             }
 
@@ -283,7 +284,10 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
     }
 
     private void updateTabsVisibility() {
-        textViewProvince.setVisibility(Lists.notEmpty(provinces) ? View.VISIBLE : View.GONE);
+        textViewProvince.setVisibility(View.VISIBLE);
+        textViewCity.setVisibility(View.VISIBLE);
+        textViewCounty.setVisibility(View.VISIBLE);
+        /*textViewProvince.setVisibility(Lists.notEmpty(provinces) ? View.VISIBLE : View.GONE);
         textViewCity.setVisibility(Lists.notEmpty(cities) ? View.VISIBLE : View.GONE);
         textViewCounty.setVisibility(Lists.notEmpty(counties) ? View.VISIBLE : View.GONE);
         textViewStreet.setVisibility(Lists.notEmpty(streets) ? View.VISIBLE : View.GONE);
@@ -291,7 +295,7 @@ public class AddressSelector implements AdapterView.OnItemClickListener {
         textViewProvince.setEnabled(tabIndex != INDEX_TAB_PROVINCE);
         textViewCity.setEnabled(tabIndex != INDEX_TAB_CITY);
         textViewCounty.setEnabled(tabIndex != INDEX_TAB_COUNTY);
-        textViewStreet.setEnabled(tabIndex != INDEX_TAB_STREET);
+        textViewStreet.setEnabled(tabIndex != INDEX_TAB_STREET);*/
     }
 
     @Override
