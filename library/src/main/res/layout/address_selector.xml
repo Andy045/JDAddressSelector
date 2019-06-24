@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:text="已选择"
+        android:textColor="#666666"
         android:visibility="gone" />
 
     <RelativeLayout
@@ -71,7 +72,7 @@
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_below="@+id/layout_tab"
-            android:background="@android:color/holo_red_light" />
+            android:background="#DD4124" />
 
     </RelativeLayout>
 
@@ -93,7 +94,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:text="请选择" />
+            android:text="请选择"
+            android:textColor="#666666" />
 
         <chihane.jdaddressselector.widget.UninterceptableListView
             android:id="@+id/listView"
